@@ -1,30 +1,48 @@
-import { Geist, Geist_Mono } from "next/font/google"
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 
-import "./globals.css"
-import { ThemeProvider } from "@/components/theme-provider"
+import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+import { Navbar } from "@/components/navbar";
+import { Footer } from "@/components/footer";
 import { cn } from "@/lib/utils";
 
-const geist = Geist({subsets:['latin'],variable:'--font-sans'})
-
-const fontMono = Geist_Mono({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-mono",
-})
+  variable: "--font-sans",
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "John Herman — Web Developer",
+    template: "%s | John Herman",
+  },
+  description:
+    "Portfolio of John Herman, a passionate Web Developer building beautiful, performant web experiences with modern technologies.",
+  keywords: [
+    "web developer",
+    "portfolio",
+    "Next.js",
+    "React",
+    "frontend",
+    "John Herman",
+  ],
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode
+  children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="en"
-      suppressHydrationWarning
-      className={cn("antialiased", fontMono.variable, "font-sans", geist.variable)}
-    >
-      <body>
-        <ThemeProvider>{children}</ThemeProvider>
+    <html lang="en" suppressHydrationWarning className={cn("antialiased", inter.variable)}>
+      <body className="font-sans">
+        <ThemeProvider>
+          <Navbar />
+          <main className="min-h-svh pt-[72px]">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }
