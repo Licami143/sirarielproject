@@ -15,7 +15,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: {
     default: "John Hernan — Web Developer",
-    template: "%s | John Herman",
+    template: "%s | John Hernan",
   },
   description:
     "Portfolio of John Hernan, a passionate Web Developer building beautiful, performant web experiences with modern technologies.",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "Next.js",
     "React",
     "frontend",
-    "John Herman",
+    "John Hernan",
   ],
 };
 
