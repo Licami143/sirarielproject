@@ -60,7 +60,7 @@ export function Navbar() {
             <Mail className="h-4 w-4" />
           </div>
           <span className="text-lg font-bold tracking-tight">
-            John<span className="gradient-text">Herman</span>
+            John<span className="gradient-text">Hernan</span>
           </span>
         </Link>
 
