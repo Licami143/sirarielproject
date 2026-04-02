@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowRight, Code2, Palette, Server, Smartphone, Database, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -18,14 +19,9 @@ const featuredProjects = [
     title: "E-Commerce Platform",
     description:
       "A full-stack e-commerce application with real-time inventory management, payment processing, and an admin dashboard.",
-    tags: ["Next.js", "PostgreSQL", "Stripe"],
-  },
-  {
-    title: "Task Management App",
-    description:
-      "A collaborative project management tool with drag-and-drop boards, real-time updates, and team collaboration features.",
-    tags: ["React", "Node.js", "Socket.io"],
-  },
+    tags: ["Next.js"],
+    image: "/ss.png", // Updated to your screenshot file name
+  }
 ];
 
 export default function HomePage() {
@@ -50,7 +46,7 @@ export default function HomePage() {
 
               <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
                 Hello! I am{" "}
-                <span className="gradient-text">John Herman</span>
+                <span className="gradient-text">John Hernan</span>
                 <br />
                 and I am a{" "}
                 <span className="text-primary">Web Developer</span>
@@ -77,10 +73,14 @@ export default function HomePage() {
             {/* Right – hero image placeholder */}
             <div className="animate-slide-in-right delay-200 flex justify-center">
               <div className="relative">
-                <div className="img-placeholder h-80 w-80 rounded-2xl glow-cyan sm:h-96 sm:w-96">
-                  <svg className="relative z-10 h-24 w-24 text-primary/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+                <div className="relative h-80 w-80 overflow-hidden rounded-2xl glow-cyan sm:h-96 sm:w-96">
+                  <Image 
+                    src="/hern.jpg" /* Make sure hern.jpg is also in your public folder */
+                    alt="Portrait of John Hernan"
+                    fill
+                    className="object-cover"
+                    priority
+                  />
                 </div>
                 {/* Floating decorative element */}
                 <div className="absolute -right-4 -bottom-4 h-20 w-20 rounded-xl border border-primary/20 bg-primary/5 animate-float" />
@@ -148,11 +148,14 @@ export default function HomePage() {
                 key={project.title}
                 className={`animate-fade-in-up delay-${(i + 1) * 200} group overflow-hidden rounded-xl border border-border bg-card transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-xl`}
               >
-                {/* Image placeholder */}
-                <div className="img-placeholder h-48 w-full">
-                  <svg className="relative z-10 h-16 w-16 text-primary/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
+                {/* Custom Image Integration */}
+                <div className="relative h-48 w-full overflow-hidden">
+                  <Image 
+                    src={project.image} 
+                    alt={`Preview of ${project.title}`}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
                 </div>
                 <div className="p-6">
                   <h3 className="text-lg font-semibold group-hover:text-primary transition-colors">

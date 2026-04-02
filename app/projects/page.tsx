@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -13,23 +14,10 @@ const projects = [
     title: "E-Commerce Platform",
     description:
       "A full-stack e-commerce application with real-time inventory management, secure payment processing via Stripe, and a comprehensive admin dashboard for analytics and order management.",
-    tags: ["Next.js", "PostgreSQL", "Stripe", "Tailwind CSS"],
-    link: "#",
-  },
-  {
-    title: "Task Management App",
-    description:
-      "A collaborative project management tool featuring drag-and-drop Kanban boards, real-time updates with WebSockets, team workspaces, and automated task assignment workflows.",
-    tags: ["React", "Node.js", "Socket.io", "MongoDB"],
-    link: "#",
-  },
-  {
-    title: "Portfolio Dashboard",
-    description:
-      "A dynamic analytics dashboard for tracking portfolio performance. Features interactive charts, real-time data feeds, dark/light themes, and custom reporting tools.",
-    tags: ["TypeScript", "D3.js", "Express", "PostgreSQL"],
-    link: "#",
-  },
+    tags: ["React.js"],
+    link: "https://botchokoy.vercel.app/",
+    image: "/ss.png", // Add your project image path here
+  }
 ];
 
 export default function ProjectsPage() {
@@ -62,11 +50,14 @@ export default function ProjectsPage() {
               key={project.title}
               className={`animate-fade-in-up delay-${(i + 1) * 200} group flex flex-col overflow-hidden rounded-xl border border-border bg-card transition-all hover:-translate-y-2 hover:border-primary/30 hover:shadow-2xl`}
             >
-              {/* Image placeholder */}
-              <div className="img-placeholder h-52 w-full transition-all group-hover:brightness-110">
-                <svg className="relative z-10 h-16 w-16 text-primary/30" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
+              {/* Custom Image Integration */}
+              <div className="relative h-52 w-full overflow-hidden bg-muted">
+                <Image
+                  src={project.image}
+                  alt={`Preview of ${project.title}`}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
               </div>
 
               {/* Content */}

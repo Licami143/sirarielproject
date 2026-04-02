@@ -42,10 +42,8 @@ function FacebookIcon({ className }: { className?: string }) {
 }
 
 const socialLinks = [
-  { href: "https://github.com", icon: GithubIcon, label: "GitHub" },
-  { href: "https://linkedin.com", icon: LinkedinIcon, label: "LinkedIn" },
-  { href: "https://twitter.com", icon: TwitterIcon, label: "Twitter" },
-  { href: "https://facebook.com", icon: FacebookIcon, label: "Facebook" },
+  { href: "https://github.com/Licami143", icon: GithubIcon, label: "GitHub" },
+  { href: "https://www.facebook.com/ken.jie.52831", icon: FacebookIcon, label: "Facebook" },
 ];
 
 export function Footer() {

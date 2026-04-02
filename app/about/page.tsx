@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Briefcase, Download, MapPin, Mail as MailIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -10,39 +11,18 @@ export const metadata: Metadata = {
 
 const experience = [
   {
-    role: "Senior Web Developer",
-    type: "Remote",
+    role: "Jollibee crew",
+    type: "Onsite",
     period: "2025 – Present",
     description:
-      "Leading frontend architecture for client projects, building scalable applications with Next.js and TypeScript.",
-  },
-  {
-    role: "Web Developer",
-    type: "Remote",
-    period: "2023 – 2025",
-    description:
-      "Developed full-stack web applications, integrated REST APIs, and delivered responsive UI for international clients.",
-  },
-  {
-    role: "Junior Web Developer",
-    type: "Contractual",
-    period: "2022 – 2023",
-    description:
-      "Built and maintained websites for small businesses, focusing on performance optimization and SEO.",
-  },
-  {
-    role: "Started Coding",
-    type: "",
-    period: "2021",
-    description:
-      "Wrote my first line of code and fell in love with web development. 👋",
-  },
+      "Working as a crew in a fastfood chain",
+  }
 ];
 
 const techStacks = {
   Frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "HTML/CSS"],
   Backend: ["Node.js", "Express", "PostgreSQL", "REST APIs", "Prisma"],
-  Tools: ["Git", "VS Code", "Figma", "Vercel", "Docker"],
+  Tools: ["Git", "VS Code", "Figma", "Vercel"],
 };
 
 export default function AboutPage() {
@@ -62,13 +42,13 @@ export default function AboutPage() {
                 About Me
               </span>
               <h1 className="text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-                I am a{" "}
-                <span className="gradient-text">Web Developer</span>
+                I am {" "}
+                <span className="gradient-text">John Hernan Licami</span>
               </h1>
 
               <div className="space-y-4 text-muted-foreground leading-relaxed">
                 <p>
-                  Hi there, I am John Herman — a passionate Web Developer
+                  Hi there, I am John Hernan, a passionate Web Developer
                   dedicated to building websites and web applications that are
                   not only highly functional but also visually captivating.
                 </p>
@@ -103,12 +83,16 @@ export default function AboutPage() {
               </Button>
             </div>
 
-            {/* Right – image placeholder */}
+            {/* Right – Custom Image */}
             <div className="animate-slide-in-right delay-200 flex justify-center">
-              <div className="img-placeholder h-80 w-full max-w-sm rounded-2xl glow-violet">
-                <svg className="relative z-10 h-24 w-24 text-violet-400/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                </svg>
+              <div className="relative h-80 w-full max-w-sm overflow-hidden rounded-2xl glow-violet">
+                <Image 
+                  src="/hern.jpg" /* Replace with your actual image path in the public folder */
+                  alt="Portrait of John Hernan Licami"
+                  fill
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
           </div>

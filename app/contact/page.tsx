@@ -1,5 +1,5 @@
 "use client";
-
+import Image from "next/image";
 import { useState } from "react";
 import type { FormEvent } from "react";
 import { Send, RotateCcw, CheckCircle } from "lucide-react";
@@ -160,13 +160,15 @@ export default function ContactPage() {
               </form>
             )}
           </div>
-
-          {/* Right – image placeholder */}
+{/* Right – Custom Image */}
           <div className="animate-slide-in-right delay-400 flex justify-center">
-            <div className="img-placeholder h-80 w-full max-w-sm rounded-2xl glow-cyan">
-              <svg className="relative z-10 h-24 w-24 text-cyan-400/40" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-              </svg>
+            <div className="relative h-80 w-full max-w-sm overflow-hidden rounded-2xl glow-cyan">
+              <Image 
+                src="/hern.jpg" /* Change this to /ss.png, /hern.jpg, or whatever your file is named */
+                alt="Section image"
+                fill
+                className="object-cover"
+              />
             </div>
           </div>
         </div>
