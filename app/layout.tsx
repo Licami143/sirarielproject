@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     template: "%s | John Herman",
   },
   description:
-    "Portfolio of John Herman, a passionate Web Developer building beautiful, performant web experiences with modern technologies.",
+    "Portfolio of John Hernan, a passionate Web Developer building beautiful, performant web experiences with modern technologies.",
   keywords: [
     "web developer",
     "portfolio",
